@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello World</title>
+    <title>Hello World Dynamic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 15%;
+            background: #111;
+            color: white;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World 🌍</h1>
-    <p>This page is hosted on Render</p>
+
+    <h1 id="title">Hello World 🌍</h1>
+    <h2 id="time"></h2>
+
+    <button onclick="changeText()">Click Me</button>
+
+    <script>
+        // Dynamic time
+        function updateTime() {
+            const now = new Date();
+            document.getElementById("time").innerText =
+                "Current Time: " + now.toLocaleTimeString();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Button click dynamic change
+        function changeText() {
+            document.getElementById("title").innerText =
+                "Welcome to Anji’s Dance Academy 💃🕺";
+        }
+    </script>
+
 </body>
 </html>
